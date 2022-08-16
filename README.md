@@ -1,4 +1,4 @@
-# vue-v2
+# images-app-202208
 
 ## Project setup
 ```
