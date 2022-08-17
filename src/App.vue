@@ -7,19 +7,19 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld />
+      <FacilityImages />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import FacilityImages from './components/FacilityImages'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    FacilityImages,
   },
 
   data: () => ({

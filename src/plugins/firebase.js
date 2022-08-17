@@ -1,5 +1,7 @@
 import firebase from 'firebase/compat/app'
-const fb = require('../fb_conf.json')
+import 'firebase/compat/storage'
+
+const fb = require('../../fb_conf.json')
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -13,8 +15,6 @@ const firebaseConfig = {
   messagingSenderId: fb.YOUR_MESSAGING_SENDER_ID,
   appId: fb.YOUR_APP_ID
 };
-
-console.log(firebaseConfig)
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
