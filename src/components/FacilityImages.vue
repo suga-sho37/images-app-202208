@@ -1,6 +1,12 @@
 <template>
   <v-container>
     <v-row class="text-center">
+      <v-col v-if="loading">
+        <v-progress-circular
+          indeterminate
+          color="primary"
+        ></v-progress-circular>
+      </v-col>
       <v-col v-for="image in images" cols="4" :key="image.url">
         <v-img :src="image.url" class="my-3" contain height="200" />
       </v-col>
@@ -15,9 +21,11 @@ export default {
   name: 'FacilityImages',
 
   data: () => ({
+    loading: false,
     images: [],
   }),
   mounted() {
+    this.loading = true
     var storageRef = storage.ref()
     storageRef
       .listAll()
@@ -38,6 +46,11 @@ export default {
       .catch(function (e) {
         console.error(e)
       })
+      .finally(
+        function () {
+          this.loading = false
+        }.bind(this),
+      )
   },
 }
 </script>
